@@ -14,8 +14,8 @@ class MyManufacturersPostRequest extends FormRequest
      */
     public function authorize()
     {
-        // return Auth::check();
-        return true;
+        return Auth::check();
+        // return true;
     }
 
     /**

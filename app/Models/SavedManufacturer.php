@@ -2,8 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Services\MyFavoriteManufacturerScope;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class SavedManufacturer extends Model
 {
@@ -22,6 +24,21 @@ class SavedManufacturer extends Model
      * @var array
      */
     protected $dates = ['created_at', 'updated_at', 'deleted_at'];
+
+
+    /**
+     * The "booting" method of the model.
+     *
+     * @return void
+     */
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::creating(fn(self $model) =>  $model->user_id = Auth::id());
+
+        static::addGlobalScope(new MyFavoriteManufacturerScope);
+    }
 
     /**
      * BelongsTo relationship

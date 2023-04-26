@@ -36,7 +36,7 @@ class FavoriteManufacturerService
      */
     public function saveFavoriteManufacturers(array $request): \Illuminate\Http\JsonResponse
     {
-        $request['user_id'] = 1;
+        // $request['user_id'] = 1;
 
         try {
             SavedManufacturer::create($request);
