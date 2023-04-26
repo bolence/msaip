@@ -33,6 +33,11 @@ class ManufacturersApiTest extends TestCase
         $response->assertStatus(200);
     }
 
+    /**
+     * Test if user can see manufacturer models
+     *
+     * @return void
+     */
     public function test_can_list_manufacturer_models()
     {
         $manufacturer = Manufacturer::factory(1)->create();
