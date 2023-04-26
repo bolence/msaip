@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Services\MyFavoriteManufacturerScope;
+use App\Scopes\MyFavoriteManufacturerScope;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;

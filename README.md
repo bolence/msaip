@@ -71,3 +71,8 @@ php artisan migrate
 ```
 php artisan db:seed
 ```
+
+### Run tests
+```
+php artisan test
+```
